@@ -7,3 +7,11 @@ Then eu posso ver uma Página com uma mensagem sinalizando que não foram encont
 Cenário de falha1
 
 Cenário de falha2
+
+
+Given que eu consigo ver a barra de busca.
+When eu digito um título de filme cadastrado.
+Then eu posso ver os títulos similares alfabeticamente.
+When eu escolho um desses títulos
+Then eu devo acessar a página de detalhes do título.
+
