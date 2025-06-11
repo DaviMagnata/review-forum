@@ -24,6 +24,6 @@ When eu confirmo a busca.
 Then eu devo ver a página de resultados.
 And o número de resultados encontrados na busca.
 And os filmes encontrados na busca.
-When eu escolho um desses filmes
-Then eu devo acessar a página de detalhes do título.
+When eu escolho 1 desses filmes
+Then eu devo acessar as páginas de detalhes do título.
 
