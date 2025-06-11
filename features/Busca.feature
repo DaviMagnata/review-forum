@@ -7,3 +7,4 @@ Then eu posso ver uma Página com uma mensagem sinalizando que não foram encont
 Cenário de falha1
 
 Cenário de falha2
+Then eu posso ver a mensagem "falha".
