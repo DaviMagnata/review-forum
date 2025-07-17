@@ -3,7 +3,8 @@ import { DataSource } from "typeorm";
 import { Movie } from "../models/Movie";
 import { Forum } from "../models/Forum";
 import Comment from "../models/Comment";
-
+import { Review } from "../models/Review";
+import {MovieReviewStats} from "../models/MovieReviewStats";
 
 export const AppDataSource = new DataSource({
   type: "postgres",           // or postgres, sqlite, etc.
@@ -13,8 +14,8 @@ export const AppDataSource = new DataSource({
   password: "admin",
   database: "review_forum",
   synchronize: true,       // auto-creates tables in dev :contentReference[oaicite:2]{index=2}
-  dropSchema: true,
-  entities: [Movie, Forum, Comment],
+  dropSchema: true, //Quando o servidor reinicia, reinicia o banco de dados
+  entities: [Movie, Review, Forum, Comment,MovieReviewStats],
 });
 
 
