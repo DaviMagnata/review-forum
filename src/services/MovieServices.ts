@@ -75,13 +75,10 @@ export default class MovieServices {
     }
 
     static async searchByName(name: string) {
+
         return MovieRepository.searchByName(name)
     }
-    /*
-    static async trending() {
-        return MovieRepository.trending();
-    }
-    */
+
 
     static async update(id: number, movieUpdateDTO: any) {
         // Busca o filme existente no banco de dados.

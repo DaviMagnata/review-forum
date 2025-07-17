@@ -388,6 +388,7 @@ MovieRouter.get('/details/:id', async (request: Request, response: Response) => 
  */
 MovieRouter.get('/search', async(request: Request, response: Response) => {
     const params = request.query;
+
     // @ts-ignore
     const result = await MovieServices.searchByName(params.name);
     response.send(result);
