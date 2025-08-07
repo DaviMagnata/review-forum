@@ -66,7 +66,10 @@ export default class MovieRepository {
     }
 
     static searchByName(name: string) : Promise<Movie[]> {
-        return movieRepository.createQueryBuilder("movie").where(`movie.name LIKE '%${name}%'`).getMany()
+        return movieRepository
+            .createQueryBuilder("movie")
+            .where("movie.name ILIKE :name", { name: `${name}%` })
+            .getMany();
     }
 
     static saveMovie(movie: Movie) : Promise<any> {

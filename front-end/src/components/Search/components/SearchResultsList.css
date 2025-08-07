@@ -1,0 +1,11 @@
+.results-list{
+    position: absolute;
+    top: 100%; /* directly below the input */
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+
+}

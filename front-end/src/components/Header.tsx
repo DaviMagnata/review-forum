@@ -1,5 +1,5 @@
 "use client";
-
+import Search from './Search/Search.tsx'
 import React from 'react';
 import Link from 'next/link';
 import styles from './Header.module.css'; // Importamos o ficheiro de estilos
@@ -23,11 +23,7 @@ const Header: React.FC = () => {
           </nav>
         </div>
         <div className={styles.controls}>
-          <input
-            type="search"
-            placeholder="Search..."
-            className={styles.searchInput}
-          />
+          <Search></Search>
           {isAdmin ? (
             <button onClick={logout} className={styles.loginLink}>
               Logout (Admin)

@@ -12,3 +12,5 @@ back-end/personal-notes.md
 back-end/coverage/
 back-end/coverage/
 *.next/
+front-end/.next/
+back-end/src/infra/
