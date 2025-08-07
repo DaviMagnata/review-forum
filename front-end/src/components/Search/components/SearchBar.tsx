@@ -1,8 +1,10 @@
+"use client";
 import React from "react"
-import {FaSearch} from "react-icons/fa";
+import styles2 from '../Search.module.css'
 import styles from "../../Header.module.css"
 import {useState} from "react";
 import {listbyName} from '../../../services/MovieService.ts'
+import Go from './Go.tsx'
 export const SearchBar = ({setResults}) =>{
     const [input,setInput] = useState("")
     const fetchData = (value) => {
@@ -27,13 +29,12 @@ export const SearchBar = ({setResults}) =>{
     }
 
     return(
-        <div className="input-wrapper">
-
+        <div className={styles.searchInputWrapper}>
             <input className={styles.searchInput}
                    value={input}
                    placeholder="Search"
             onChange={(e)=>handleChange(e.target.value)}/>
-
+            <Go texto={input}></Go>
         </div>
     )
 }

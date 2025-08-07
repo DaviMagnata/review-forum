@@ -5,3 +5,26 @@
     width: 100%;
 }
 
+.searchInputWrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* spacing between search bar and Go icon */
+}
+
+/* Optionally, set width on SearchBar input to fill available space */
+.searchInputWrapper input {
+    flex-grow: 1;
+    min-width: 0; /* prevent overflow */
+}
+
+.input-wrapper {
+    background-color: transparent;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    max-height: 40px;
+    box-sizing: border-box;
+    gap: 8px;
+}

@@ -1,23 +1,36 @@
+"use client";
 import styles from './Search.module.css'
 import SearchBar from "./components/SearchBar.tsx";
-import {useState} from "react";
+import { useState, useRef, useEffect } from "react";
 import SearchResultsList from './components/SearchResultsList.tsx'
+import Go from './components/Go.tsx'
 
-function Search(){
-    const [results,setResults] = useState([])
+function Search() {
+    const [results, setResults] = useState([]);
+    const containerRef = useRef(null);
 
-    return(
-        <div>
-            <div className={styles.searchbarcontainer}>
-                <div>
-                    <SearchBar setResults={setResults}/>
-                </div>
-                <div>
-                    <SearchResultsList results={results}></SearchResultsList>
-                </div>
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (containerRef.current && !containerRef.current.contains(event.target)) {
+                setResults([]);  // Hide results when clicking outside
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
+    return (
+        <div ref={containerRef} className={styles.searchbarcontainer}>
+            <div className={styles.searchInputWrapper}>
+                <SearchBar setResults={setResults}/>
+
             </div>
+            <SearchResultsList results={results}/>
         </div>
     )
 }
 
-export default Search
+export default Search;

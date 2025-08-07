@@ -1,5 +1,5 @@
 .input-wrapper {
-    background-color: transparent;
+    background-color: yellow;
     border-radius: 10px;
     width: 100%;
     display: flex;
@@ -7,6 +7,7 @@
     padding: 8px;
     max-height: 40px;
     box-sizing: border-box;
+    gap: 8px;
 }
 
 .input{

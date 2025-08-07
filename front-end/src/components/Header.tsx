@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import styles from './Header.module.css'; // Importamos o ficheiro de estilos
 import { useAuth } from '@/context/AuthContext';
-
+import Go from './Search/components/Go.tsx'
 const Header: React.FC = () => {
   const { isAdmin, loginAsAdmin, logout } = useAuth();
 
@@ -24,6 +24,7 @@ const Header: React.FC = () => {
         </div>
         <div className={styles.controls}>
           <Search></Search>
+
           {isAdmin ? (
             <button onClick={logout} className={styles.loginLink}>
               Logout (Admin)

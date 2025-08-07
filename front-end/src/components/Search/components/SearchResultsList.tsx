@@ -1,8 +1,8 @@
+"use client";
 import React from "react";
 import './SearchResultsList.css';
 import Result from './Result.tsx'
 const SearchResultsList = ({ results }) => {
-    if (!results || results.length === 0) return [];
 
     return (
         <div className="results-list">
