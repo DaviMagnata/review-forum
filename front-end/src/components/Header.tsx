@@ -20,6 +20,7 @@ const Header: React.FC = () => {
           <nav className={styles.nav}>
             <Link href="/">Films</Link>
             <Link href="/forum">Forum</Link>
+            <Link href="/rating">Busca por rating</Link>
           </nav>
         </div>
         <div className={styles.controls}>

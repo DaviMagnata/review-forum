@@ -12,3 +12,10 @@ export const listbyName = async function (name) {
     const response= await axios.get(`${API_URL}/search?name=${encodedName}`);
     return response.data;
 };
+
+
+export const listbyTags = async function (tags: string[]) {
+    const tagParam = encodeURIComponent(tags[0]);
+    const response = await axios.get(`${API_URL}/search-by-tags?tags=${tagParam}`);
+    return response.data;
+};

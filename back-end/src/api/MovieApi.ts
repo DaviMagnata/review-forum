@@ -298,6 +298,7 @@ MovieRouter.get('/search', async(request: Request, response: Response) => {
     const params = request.query;
     // @ts-ignore
     const result = await MovieServices.searchByName(params.name);
+    console.log("nome")
     response.send(result);
 })
 
@@ -354,9 +355,12 @@ MovieRouter.get('/trending', async (req: Request,res: Response)=>{
 //api/movies/search-by-tags?tags=
 MovieRouter.get('/search-by-tags', async (req: Request, res: Response) => {
     const tagsParam = req.query.tags;
+    console.log("yo")
     if (!tagsParam || typeof tagsParam !== 'string') {
+        console.log("yo2")
         return res.status(400).json({ error: 'Missing or invalid tags parameter' });
     }
+
     const tags = tagsParam.split(',').map(n=> n.toLowerCase());
     const movies = await MovieServices.searchByTags(tags);
     res.status(200).json(movies);

@@ -2,8 +2,8 @@ import { listbyTags } from './../../../services/MovieService.ts';
 import MovieDescription from './../../../components/MovieDescription.tsx';
 import styles from './FilmesEncontrados.module.css';
 
-export default async function FilmesEncontrados({ params }: { params: { tags: string[] } }) {
-
+export default async function FilmesPorTag({ params }: { params: { tags: string[] } }) {
+    // Use the first tag if only one is expected
     const tagString = params.tags[0]
 
     const filmes = await listbyTags(tagString);

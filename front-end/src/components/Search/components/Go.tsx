@@ -1,4 +1,5 @@
 "use client";
+import styles from "../components/Go.module.css"
 
 import { useRouter } from "next/navigation";
 import {MdArrowForward} from "react-icons/md";
@@ -12,7 +13,7 @@ function Go({ texto }: { texto: string }) {
 
     return (
         <button onClick={handleClick}>
-            <MdArrowForward />
+            <MdArrowForward className={styles.arrow}/>
         </button>
     );
 }

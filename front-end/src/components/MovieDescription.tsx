@@ -12,7 +12,8 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
   const poster = movie.bannerURL || `https://placehold.co/400x600/1f2937/99AABB?text=${movie.name.replace(/\s/g, '+')}`;
 
   return (
-    <Link href={`/movie/${movie.id}`} className={styles.card}>
+      <>
+      <Link href={`/movie/${movie.id}`} className={styles.card}>
       <div className={styles.posterContainer}>
         <img
           src={poster}
@@ -24,10 +25,12 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
       </div>
        <div>
            <p className={styles.title}>{movie.name}</p>
+           <p>Descrição:</p>
            <p className={styles.description}>{movie.description}</p>
        </div>
     </Link>
-  );
+    </>
+);
 };
 
 export default MovieCard;

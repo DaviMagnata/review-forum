@@ -3,7 +3,7 @@ import MovieCard from '../../../components/MovieCard.tsx'
 import MovieDescription from "../../../components/MovieDescription.tsx";
 import styles from "./FilmesEncontrados.module.css"
 export default async function FilmesEncontrados({ params }: { params: { id: string } }) {
-    const filmes = await listbyName(params.id); // Use 'id' instead of 'name'
+    const filmes = await listbyName(params.id);
 
     return (
         <div>
